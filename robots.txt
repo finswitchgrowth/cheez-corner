@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cheez-corner-finswitch.vercel.app/sitemap.xml
