@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin.html
 
-Sitemap: https://cheez-corner-finswitch.vercel.app/sitemap.xml
+Sitemap: https://chezcorner.cv/sitemap.xml
+Host: chezcorner.cv
