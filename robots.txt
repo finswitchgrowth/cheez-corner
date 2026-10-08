@@ -3,4 +3,3 @@ Allow: /
 Disallow: /admin.html
 
 Sitemap: https://chezcorner.cv/sitemap.xml
-Host: chezcorner.cv
