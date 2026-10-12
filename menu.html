@@ -89,4 +89,9 @@ const viewedDishes=new Set();
 function openDish(d,modal){focusDish=d;document.getElementById('detailCategory').textContent=d[1];document.getElementById('detailTitle').textContent=d[0];document.getElementById('detailText').textContent=d[3]+' Reference food photography; exact presentation, ingredients and availability should be confirmed when enquiring.';const photo=document.getElementById('detailPhoto');photo.style.backgroundImage='linear-gradient(0deg,#170b0b33,transparent),url("'+photoForDish(d)+'")';photo.style.backgroundColor='#352125';document.getElementById('detailAsk').href='#dish-enquiry';if(!viewedDishes.has(d[0])){viewedDishes.add(d[0]);trackDishEvent('dish_view',d)}if(modal)document.getElementById('detail').classList.add('open')}
 function closeDish(){document.getElementById('detail').classList.remove('open')}
 document.getElementById('detailClose').onclick=closeDish;document.getElementById('detailDismiss').onclick=closeDish;document.getElementById('detail').addEventListener('click',e=>{if(e.target.id==='detail')closeDish()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDish()});renderFilters();renderDishes();
-</script></body></html>
+</script>
+<script type="module">
+import { injectSpeedInsights } from 'https://cdn.jsdelivr.net/npm/@vercel/speed-insights@1/dist/index.mjs';
+injectSpeedInsights();
+</script>
+</body></html>

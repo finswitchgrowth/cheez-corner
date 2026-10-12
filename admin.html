@@ -122,4 +122,8 @@ function printReport(){
 $('loginBtn').onclick=async()=>{try{const d=await auth({email:$('email').value,password:$('pass').value});token=d.access_token;$('login').classList.add('hidden');$('app').classList.remove('hidden');await load()}catch(e){$('loginErr').textContent=e.message}};
 $('refresh').onclick=load;$('apply').onclick=applyFilters;$('clear').onclick=()=>{$('from').value='';$('to').value='';$('statusFilter').value='';$('sourceFilter').value='';applyFilters()};$('csv').onclick=exportCSV;$('xlsx').onclick=exportXLSX;$('json').onclick=exportJSON;$('print').onclick=printReport;$('logout').onclick=()=>location.reload();
 </script>
+<script type="module">
+import { injectSpeedInsights } from 'https://cdn.jsdelivr.net/npm/@vercel/speed-insights@1/dist/index.mjs';
+injectSpeedInsights();
+</script>
 </body></html>
