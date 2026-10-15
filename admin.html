@@ -82,9 +82,10 @@ function esc(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&l
 function money(v){return new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:0}).format(Number(v)||0)}
 function dateOnly(v){return v?String(v).slice(0,10):''}
 function sourceOf(x){return x.source||'direct'}
+function phoneDigits(v){return String(v||'').replace(/[^0-9]/g,'')}
 function hot(x){const d=x.event_date?Math.ceil((new Date(x.event_date)-new Date())/86400000):999;return !!x.phone&&(x.status==='new'||x.status==='contacted')&&(d<=30||Number(x.guests||0)>=300||Number(x.estimated_value||0)>=150000)}
 async function load(){
- allLeads=await api('leads?select=*&order=created_at.desc');
+ try{allLeads=await api('leads?select=*&order=created_at.desc');}catch(e){alert('Could not load leads. Check the connection and retry.');throw e}
  const src=[...new Set(allLeads.map(sourceOf))].sort();
  $('sourceFilter').innerHTML='<option value="">All sources</option>'+src.map(s=>'<option>'+esc(s)+'</option>').join('');
  applyFilters();
@@ -105,9 +106,9 @@ function render(){
  const count=(key)=>Object.entries(d.reduce((a,x)=>{const k=x[key]||'Unknown';a[k]=(a[k]||0)+1;return a},{})).sort((a,b)=>b[1]-a[1])[0]?.[0]||'—';
  $('topSource').textContent=count('source');$('topOccasion').textContent=count('occasion');$('hotLeads').textContent=d.filter(hot).length;
  $('filterInfo').textContent='Showing '+d.length+' of '+allLeads.length+' leads.';
- $('rows').innerHTML=d.map(x=>'<tr><td>'+new Date(x.created_at).toLocaleString('en-IN')+'</td><td>'+esc(x.name)+'</td><td>'+esc(x.phone)+'</td><td><span class="badge">'+esc(sourceOf(x))+'</span></td><td>'+esc(x.food||'—')+'</td><td>'+esc(x.occasion)+'</td><td>'+esc(x.guests)+'</td><td>'+esc(x.event_date||'—')+'</td><td>'+money(x.estimated_value)+'</td><td><select onchange="statusUpdate(\\''+x.id+'\\',this.value)">'+['new','contacted','quoted','booked','lost'].map(s=>'<option '+(x.status===s?'selected':'')+'>'+s+'</option>').join('')+'</select></td><td><a href="https://wa.me/'+String(x.phone||'').replace(/\\D/g,'')+'" target="_blank" rel="noopener">WhatsApp</a></td></tr>').join('');
+ $('rows').innerHTML=d.map(x=>'<tr><td>'+new Date(x.created_at).toLocaleString('en-IN')+'</td><td>'+esc(x.name)+'</td><td>'+esc(x.phone)+'</td><td><span class="badge">'+esc(sourceOf(x))+'</span></td><td>'+esc(x.food||'—')+'</td><td>'+esc(x.occasion)+'</td><td>'+esc(x.guests)+'</td><td>'+esc(x.event_date||'—')+'</td><td>'+money(x.estimated_value)+'</td><td><select data-lead-status="'+esc(x.id)+'" aria-label="Update lead status">'+['new','contacted','quoted','booked','lost'].map(s=>'<option value="'+s+'" '+(x.status===s?'selected':'')+'>'+s+'</option>').join('')+'</select></td><td><a href="https://wa.me/91'+phoneDigits(x.phone)+'" target="_blank" rel="noopener">WhatsApp</a></td></tr>').join('');
 }
-async function statusUpdate(id,v){await api('leads?id=eq.'+id,{method:'PATCH',headers:{Prefer:'return=minimal'},body:JSON.stringify({status:v})});await load()}
+async function statusUpdate(id,v){try{await api('leads?id=eq.'+encodeURIComponent(id),{method:'PATCH',headers:{Prefer:'return=minimal'},body:JSON.stringify({status:v})});await load()}catch(e){alert('Could not update lead status. Please refresh and retry.');await load()}}\n$('rows').addEventListener('change',e=>{const s=e.target.closest('select[data-lead-status]');if(s)statusUpdate(s.dataset.leadStatus,s.value)});
 function rowsForExport(){return filteredLeads.map(x=>({created_at:x.created_at,name:x.name,phone:x.phone,city:x.city,source:sourceOf(x),language:x.language,occasion:x.occasion,event_date:x.event_date,guests:x.guests,food:x.food,decoration:x.decoration,estimated_value:x.estimated_value,status:x.status,notes:x.notes}))}
 function stamp(){return new Date().toISOString().slice(0,19).replace(/[T:]/g,'-')}
 function downloadBlob(name,type,data){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([data],{type}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
