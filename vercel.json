@@ -1,1 +1,44 @@
-{"rewrites":[{"source":"/gallery/13325.mp4","destination":"https://91ce758f-d8f3-4d41-ab76-acb7f8d98834.sandbox.floot.app/_cdn/static/f4da1a80-ea0f-4dbc-981c-52bcbe1734a6-VID-20261008-WA0016.mp4"},{"source":"/gallery/13329.mp4","destination":"https://91ce758f-d8f3-4d41-ab76-acb7f8d98834.sandbox.floot.app/_cdn/static/7a0eef77-8269-428f-8e34-a3a4107c43bc-VID-20261008-WA0011.mp4"},{"source":"/gallery/13333.mp4","destination":"https://91ce758f-d8f3-4d41-ab76-acb7f8d98834.sandbox.floot.app/_cdn/static/c1087a97-fe65-4134-847b-e8261ffc0a95-VID-20261008-WA0018.mp4"},{"source":"/gallery/13337.mp4","destination":"https://91ce758f-d8f3-4d41-ab76-acb7f8d98834.sandbox.floot.app/_cdn/static/958cff9a-7460-45bb-a914-f810ee7ce0b3-VID-20261008-WA0019.mp4"},{"source":"/gallery/13339.mp4","destination":"https://91ce758f-d8f3-4d41-ab76-acb7f8d98834.sandbox.floot.app/_cdn/static/7863c882-cb5b-4757-83f0-7bab25eba0c0-VID-20261008-WA0020.mp4"},{"source":"/gallery/13343.mp4","destination":"https://91ce758f-d8f3-4d41-ab76-acb7f8d98834.sandbox.floot.app/_cdn/static/7a69f461-9f81-414d-b2e6-a56f5e01d2c8-VID-20261008-WA0021.mp4"},{"source":"/gallery/13351.mp4","destination":"https://91ce758f-d8f3-4d41-ab76-acb7f8d98834.sandbox.floot.app/_cdn/static/42e01da6-8f29-48aa-b3de-4a2f1c68ab38-VID-20261008-WA0010.mp4"},{"source":"/gallery/13355.mp4","destination":"https://91ce758f-d8f3-4d41-ab76-acb7f8d98834.sandbox.floot.app/_cdn/static/540b9d1d-b35e-430d-b4f5-bfa1fafe9e4e-VID-20261008-WA0023.mp4"},{"source":"/gallery/13360.mp4","destination":"https://91ce758f-d8f3-4d41-ab76-acb7f8d98834.sandbox.floot.app/_cdn/static/7feb9ba3-6931-4632-9c4e-332a6f239039-VID-20261008-WA0024.mp4"},{"source":"/gallery/13364.mp4","destination":"https://91ce758f-d8f3-4d41-ab76-acb7f8d98834.sandbox.floot.app/_cdn/static/67c5f212-7edd-4935-bfa1-79454318ca6c-VID-20261008-WA0025.mp4"}]}
+{
+  "rewrites": [
+    {
+      "source": "/gallery/13325.mp4",
+      "destination": "https://91ce758f-d8f3-4d41-ab76-acb7f8d98834.sandbox.floot.app/_cdn/static/c44c8d22-04eb-4a9f-8cc6-f6fe3a965b41-19766.mp4"
+    },
+    {
+      "source": "/gallery/13329.mp4",
+      "destination": "https://91ce758f-d8f3-4d41-ab76-acb7f8d98834.sandbox.floot.app/_cdn/static/01386693-8aed-4a6e-88a6-477aa25a8d96-19898.mp4"
+    },
+    {
+      "source": "/gallery/13333.mp4",
+      "destination": "https://91ce758f-d8f3-4d41-ab76-acb7f8d98834.sandbox.floot.app/_cdn/static/93694333-4605-4d26-8f45-47214a2be916-19753.mp4"
+    },
+    {
+      "source": "/gallery/13337.mp4",
+      "destination": "https://91ce758f-d8f3-4d41-ab76-acb7f8d98834.sandbox.floot.app/_cdn/static/ae888636-69c9-400a-9dbc-3e4289325c51-19905.mp4"
+    },
+    {
+      "source": "/gallery/13339.mp4",
+      "destination": "https://91ce758f-d8f3-4d41-ab76-acb7f8d98834.sandbox.floot.app/_cdn/static/b7893956-e6ae-4fc1-884d-920e4fd39389-19895.mp4"
+    },
+    {
+      "source": "/gallery/13343.mp4",
+      "destination": "https://91ce758f-d8f3-4d41-ab76-acb7f8d98834.sandbox.floot.app/_cdn/static/b4907cf6-e1fe-4112-bcd0-251a69556670-19762.mp4"
+    },
+    {
+      "source": "/gallery/13351.mp4",
+      "destination": "https://91ce758f-d8f3-4d41-ab76-acb7f8d98834.sandbox.floot.app/_cdn/static/c2500bc2-a249-48c9-a83c-590e6c7e75c9-19783.mp4"
+    },
+    {
+      "source": "/gallery/13355.mp4",
+      "destination": "https://91ce758f-d8f3-4d41-ab76-acb7f8d98834.sandbox.floot.app/_cdn/static/9c4c8352-d791-43c8-91f5-089bed5865a1-19750.mp4"
+    },
+    {
+      "source": "/gallery/13360.mp4",
+      "destination": "https://91ce758f-d8f3-4d41-ab76-acb7f8d98834.sandbox.floot.app/_cdn/static/442dc46a-e4b7-46be-9d6f-0224b3122ff6-19908.mp4"
+    },
+    {
+      "source": "/gallery/13364.mp4",
+      "destination": "https://91ce758f-d8f3-4d41-ab76-acb7f8d98834.sandbox.floot.app/_cdn/static/f4a74afb-ada2-4309-911b-d287794b2538-19892.mp4"
+    }
+  ]
+}
