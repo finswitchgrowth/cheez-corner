@@ -187,4 +187,4 @@ $('modalContinue').onclick=async()=>{
 };
 $('year').textContent=new Date().getFullYear();
 $('lang').onclick=()=>{hi=!hi;document.documentElement.lang=hi?'hi-IN':'en-IN';$('lang').textContent=hi?'English':'हिंदी';if(hi){document.querySelector('.hero h1').innerHTML='आपका जश्न।<br><span>हमारी ज़िम्मेदारी।</span>';document.querySelector('.hero p').textContent='शादी, रिसेप्शन, कैटरिंग, पार्टी और इवेंट की पूरी प्लानिंग — आपकी तारीख, मेहमानों और बजट के अनुसार।'}else{document.querySelector('.hero h1').innerHTML='Your Celebration.<br><span>Our Responsibility.</span>';document.querySelector('.hero p').textContent='Weddings, receptions, catering, parties and event coordination — built around your date, guest count and budget.'}};
-</script></body></html>
+document.querySelectorAll('.js-event-enquire').forEach(a=>a.addEventListener('click',()=>{const d=a.dataset.eventDate;if(d&&date){date.value=d;date.dispatchEvent(new Event('input',{bubbles:true}));}if(occasion){occasion.value='Other Event';occasion.dispatchEvent(new Event('input',{bubbles:true}));}calc();}));</script></body></html>
