@@ -1,1 +1,1 @@
-window.CHEEZ_CORNER_ANALYTICS={enabled:true,project:'Chez-Corner',events:['page_view','call_click','whatsapp_click','lead_submit'],note:'Supabase wiring endpoint configured separately'};
+window.CHEEZ_CORNER_ANALYTICS={enabled:true,project:'Chez-Corner',events:['page_view','planner_generate','planner_share','lead_submit','contact_website','contact_whatsapp','contact_call'],note:'Supabase wiring endpoint configured separately'};
