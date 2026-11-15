@@ -40,5 +40,29 @@
       "source": "/gallery/13364.mp4",
       "destination": "https://91ce758f-d8f3-4d41-ab76-acb7f8d98834.sandbox.floot.app/_cdn/static/f4a74afb-ada2-4309-911b-d287794b2538-19892.mp4"
     }
+  ],
+  "headers": [
+    {
+      "source": "/admin.html",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0"
+        }
+      ]
+    },
+    {
+      "source": "/gallery/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, s-maxage=604800"
+        }
+      ]
+    }
   ]
 }
